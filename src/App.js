@@ -64,4 +64,4 @@ function App() {
 
 export default App
 
-// Projects => weather app
+// Project => weather app

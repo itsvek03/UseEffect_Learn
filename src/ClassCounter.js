@@ -5,12 +5,18 @@ export default class ClassCounter extends Component {
     super(props)
     this.state = {
       counterValue: 0,
+      X: 0,
+      Y: 0,
     }
+  }
+  logMousePointPosition = (e) => {
+    this.setState({ X: e.clientX, Y: e.clientY })
   }
 
   // Called Only once
   componentDidMount() {
     console.log('Mount Value')
+    window.addEventListener('mousemove', this.logMousePointPosition)
   }
 
   // Called After Every Render
@@ -27,6 +33,10 @@ export default class ClassCounter extends Component {
   //   }
 
   // Component Will Unmount
+  componentWillUnmount() {
+    console.log('Unmount Value')
+    window.removeEventListener('mousemove', this.logMousePointPosition)
+  }
 
   render() {
     return (
@@ -40,7 +50,12 @@ export default class ClassCounter extends Component {
           Click Me
         </button>
         <h1>Total Count is : {this.state.counterValue}</h1>
+        <h1>
+          X:{this.state.X} Y:{this.state.Y}
+        </h1>
       </div>
     )
   }
 }
+
+// Moving to Next Compoent then we can use unmount property
