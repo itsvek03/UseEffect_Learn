@@ -5,14 +5,16 @@ import ClassCounter from './ClassCounter'
 import HookCounter from './HookCounter'
 import ClassIntervalCounter from './ClassIntervalBlock'
 import HookIntervalBlock from './HookIntervalBlock'
+import PracticeOne from './components/PracticeOne'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <>
-    <App />
+    {/* <App />
     <ClassCounter />
     <HookCounter />
     <ClassIntervalCounter />
-    <HookIntervalBlock />
+    <HookIntervalBlock /> */}
+    <PracticeOne />
   </>,
 )
